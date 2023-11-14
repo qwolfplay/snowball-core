@@ -13,7 +13,7 @@ namespace core {
     };
 
 
-    flag checkForFlags(int argc, char **agrv[], flagToCheck flagsToCheck[]) {
+    flag checkForFlags(int argc, char *agrv[], flagToCheck flagsToCheck[]) {
         std::vector <flag> flagvec = {};
 
         for (int i = 0; i <; i++) {
