@@ -7,7 +7,7 @@ class core {
 public:
     struct flag {
         const char *flagString = "";
-        unsigned short index = 0;
+        int index = 0;
         char *valueptr = nullptr;
     };
 
@@ -16,8 +16,7 @@ public:
         const bool withValue = true;
     };
 
-    static std::vector<flag>
-    checkForFlags(unsigned short argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck);
+    static std::vector<flag> checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck);
 };
 
 
