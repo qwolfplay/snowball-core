@@ -4,11 +4,11 @@
 
 
 std::vector<core::flag>
-core::checkForFlags(unsigned short argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck) {
+core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck) {
     std::vector<flag> flags = {};
 
     for (auto &i: flagsToCheck) {
-        for (unsigned short j = 1; j < argc; j++) {
+        for (int j = 1; j < argc; j++) {
             if (argv[j] == i.flagString) {
                 if (i.withValue) {
                     flags.push_back(flag{
