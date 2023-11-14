@@ -15,6 +15,6 @@ endif ()
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(core src/core.cpp src/core.h
-        src/core.cpp
-        src/core.h)
+add_library(core core.cpp core.h
+        core.cpp
+        core.h)
