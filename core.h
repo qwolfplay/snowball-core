@@ -2,6 +2,8 @@
 #define CPP_CORE_CORE_H
 
 #include <vector>
+#include <fstream>
+#include <ostream>
 
 class core {
 public:
@@ -17,6 +19,8 @@ public:
     };
 
     static std::vector<flag> checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck);
+
+    void toBinFile(char *path, char *data);
 };
 
 
