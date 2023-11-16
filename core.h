@@ -21,6 +21,7 @@ public:
     static std::vector<flag> checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck);
 
     void toBinFile(char *path, char *data);
+    char* toBytes(const auto &data);
 };
 
 
