@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif CPP_CORE_CORE_H
+#endif //CPP_CORE_CORE_H
