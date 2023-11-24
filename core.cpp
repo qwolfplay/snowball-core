@@ -3,8 +3,17 @@
 #include <vector>
 
 
+bool core::checkArgs(int argc, char** argv) {
+        for (int i = 0; i < argc; i++) {
+            if (!argv[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 std::vector<core::flag>
-core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck) {
+core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flagsToCheck) {
     std::vector<flag> flags = {};
 
     for (auto &i: flagsToCheck) {
@@ -42,12 +51,14 @@ void core::toBinFile(char *path, char *data) {
     outFile.close();
 }
 
-char* core::toBytes(const auto &data) {
+char *core::toBytes(const auto &data) {
     size_t size = sizeof(data);
-    char* byteData = new char[size]; // ! DON'T FORGET TO FREE THE MEMORY
+    char *byteData = new char[size]; // ! DON'T FORGET TO FREE THE MEMORY
+
+    const char *dataAsBytes = reinterpret_cast<const char *> (&data);
 
     for (int i = 0; i < size; i++) {
-        byteData[i] = staic_cast<char> ((data >> (i * 8)) & 0xFF);
+        byteData[i] = dataAsBytes[i];
     }
 
     return byteData;
