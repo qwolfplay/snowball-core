@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <ostream>
+#include <filesystem>
 
 class core
 {
@@ -23,6 +24,7 @@ public:
     static bool checkArgs(int argc, char** argv);
     static void toBinFile(char *path, char *data);
     static char* toBytes(const auto &data);
+    // TODO: static void deletePath(const std::filesystem::path path);
 };
 
 
