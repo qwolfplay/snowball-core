@@ -51,15 +51,12 @@ void core::toBinFile(char *path, char *data) {
     outFile.close();
 }
 
-char *core::toBytes(const auto &data) {
+char *core::toBytes(const auto data) {
     size_t size = sizeof(data);
     char *byteData = new char[size]; // ! DON'T FORGET TO FREE THE MEMORY
 
-    const char *dataAsBytes = reinterpret_cast<const char *> (&data);
-
-    for (int i = 0; i < size; i++) {
-        byteData[i] = dataAsBytes[i];
-    }
+    std::memcpy(byteData, data, size);
 
     return byteData;
 }
+
