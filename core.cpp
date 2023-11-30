@@ -51,11 +51,10 @@ void core::toBinFile(char *path, char *data) {
     outFile.close();
 }
 
-char *core::toBytes(const void* data) {
-    size_t size = sizeof(data);
-    char *byteData = new char[size]; // ! DON'T FORGET TO FREE THE MEMORY
+char *core::toBytes(const void* data, size_t dataSize) {
+    char *byteData = new char[dataSize]; // ! DON'T FORGET TO FREE THE MEMORY
 
-    std::memcpy(byteData, data, size);
+    std::memcpy(byteData, data, dataSize);
 
     return byteData;
 }

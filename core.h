@@ -23,7 +23,7 @@ public:
     static std::vector<flag> checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck);
     static bool checkArgs(int argc, char** argv);
     static void toBinFile(char *path, char *data);
-    static char* toBytes(const void* data);
+    static char* toBytes(const void* data, size_t dataSize);
     // TODO: static void deletePath(const std::filesystem::path path);
 };
 
