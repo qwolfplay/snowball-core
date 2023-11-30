@@ -40,12 +40,12 @@ core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flag
 void core::toBinFile(char *path, char *data) {
     std::ofstream outFile(path, std::ios::binary);
     if (!outFile) {
-        throw std::exception();// REPLACE
+        throw std::exception(); // TODO: REPLACE
     }
 
     outFile.write(reinterpret_cast<const char *> (data), sizeof(data));
     if (!outFile) {
-        throw std::exception();// REPLACE
+        throw std::exception(); // TODO: REPLACE
     }
 
     outFile.close();
