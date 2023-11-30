@@ -51,7 +51,7 @@ void core::toBinFile(char *path, char *data) {
     outFile.close();
 }
 
-char *core::toBytes(const auto data) {
+char *core::toBytes(const void* data) {
     size_t size = sizeof(data);
     char *byteData = new char[size]; // ! DON'T FORGET TO FREE THE MEMORY
 
