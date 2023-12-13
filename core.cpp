@@ -3,17 +3,19 @@
 #include <vector>
 
 
-bool core::checkArgs(int argc, char** argv) {
-        for (int i = 0; i < argc; i++) {
-            if (!argv[i]) {
-                return false;
-            }
+bool core::checkArgs(int argc, char **argv)
+{
+    for (int i = 0; i < argc; i++) {
+        if (!argv[i]) {
+            return false;
         }
-        return true;
     }
+    return true;
+}
 
 std::vector<core::flag>
-core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flagsToCheck) {
+core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck> &flagsToCheck)
+{
     std::vector<flag> flags = {};
 
     for (auto &i: flagsToCheck) {
@@ -37,7 +39,8 @@ core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flag
     return flags;
 }
 
-void core::toBinFile(char *path, char *data) {
+void core::toBinFile(char *path, char *data)
+{
     std::ofstream outFile(path, std::ios::binary);
     if (!outFile) {
         throw std::exception(); // TODO: REPLACE
@@ -51,11 +54,10 @@ void core::toBinFile(char *path, char *data) {
     outFile.close();
 }
 
-char *core::toBytes(const void* data, size_t dataSize) {
+char *core::toBytes(const void *data, size_t dataSize)
+{
     char *byteData = new char[dataSize]; // ! DON'T FORGET TO FREE THE MEMORY
-
     std::memcpy(byteData, data, dataSize);
-
     return byteData;
 }
 
