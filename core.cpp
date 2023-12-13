@@ -59,3 +59,9 @@ char *core::toBytes(const void* data, size_t dataSize) {
     return byteData;
 }
 
+int core::bufferToInt(char *buffer, size_t offset)
+{
+    int result;
+    memcpy(&result, buffer + offset, sizeof(int));
+    return result;
+}

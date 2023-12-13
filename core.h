@@ -25,6 +25,8 @@ public:
     static void toBinFile(char *path, char *data);
     static char* toBytes(const void* data, size_t dataSize);
     // TODO: static void deletePath(const std::filesystem::path path);
+    static int bufferToInt(char* buffer, size_t offset);
+
 };
 
 
