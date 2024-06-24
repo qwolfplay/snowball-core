@@ -67,3 +67,7 @@ void core::clearConsole() {
 #endif
 }
 
+void core::fillArrayWithZeros(void *arrayPtr, size_t sizeOfType, size_t size) {
+    memset(arrayPtr, 0, size * sizeOfType);
+}
+

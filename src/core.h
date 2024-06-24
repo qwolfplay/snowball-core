@@ -25,6 +25,8 @@ public:
     static void toBinFile(char *path, char *data);
     static char* toBytes(const void* data, size_t dataSize);
     static void clearConsole();
+    static void fillArrayWithZeros(void *arrayPtr, size_t sizeOfType, size_t size);
+
     // TODO: static void deletePath(const std::filesystem::path path);
 
 };
