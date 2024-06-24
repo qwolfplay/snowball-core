@@ -54,7 +54,7 @@ void core::toBinFile(char *path, char *data) {
 char *core::toBytes(const void* data, size_t dataSize) {
     char *byteData = new char[dataSize]; // ! DON'T FORGET TO FREE THE MEMORY
 
-    std::memcpy(byteData, data, dataSize);
+    memcpy(byteData, data, dataSize);
 
     return byteData;
 }
