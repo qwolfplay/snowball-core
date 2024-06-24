@@ -24,7 +24,9 @@ public:
     static bool checkArgs(int argc, char** argv);
     static void toBinFile(char *path, char *data);
     static char* toBytes(const void* data, size_t dataSize);
+    static void clearConsole();
     // TODO: static void deletePath(const std::filesystem::path path);
+
 };
 
 

@@ -59,3 +59,11 @@ char *core::toBytes(const void* data, size_t dataSize) {
     return byteData;
 }
 
+void core::clearConsole() {
+#if defined(_WIN32) || defined(WIN32)
+    system("cls");
+#elif defined(__unix__) || defined(__APPLE__)
+    system("clear");
+#endif
+}
+
