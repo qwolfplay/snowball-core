@@ -1,7 +1,9 @@
 #include "core.h"
 
 #include <vector>
-
+#ifdef __GNUC__
+#include <cstring>
+#endif
 
 bool core::checkArgs(int argc, char** argv) {
         for (int i = 0; i < argc; i++) {
