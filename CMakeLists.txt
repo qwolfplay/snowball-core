@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(cpp-core)
+project(snowball-core)
 
 option(EXT_BUILD_DIR "Output build result to diffrent directory" OFF)
 
@@ -15,7 +15,7 @@ endif ()
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(core
+add_library(snowball
         src/core.cpp
         src/core.h
 )
