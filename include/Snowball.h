@@ -6,7 +6,7 @@
 #include <ostream>
 #include <filesystem>
 
-class core
+class Snowball
 {
 public:
     struct flag {

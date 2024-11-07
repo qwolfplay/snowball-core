@@ -17,5 +17,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_library(snowball
         src/core.cpp
-        src/core.h
 )
+
+target_include_directories(snowball PUBLIC include)

@@ -1,11 +1,11 @@
-#include "core.h"
+#include "Snowball.h"
 
 #include <vector>
 #ifdef __GNUC__
 #include <cstring>
 #endif
 
-bool core::checkArgs(int argc, char** argv) {
+bool Snowball::checkArgs(int argc, char** argv) {
         for (int i = 0; i < argc; i++) {
             if (!argv[i]) {
                 return false;
@@ -14,8 +14,8 @@ bool core::checkArgs(int argc, char** argv) {
         return true;
     }
 
-std::vector<core::flag>
-core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flagsToCheck) {
+std::vector<Snowball::flag>
+Snowball::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flagsToCheck) {
     std::vector<flag> flags = {};
 
     for (auto &i: flagsToCheck) {
@@ -39,7 +39,7 @@ core::checkForFlags(int argc, char *argv[], const std::vector<flagToCheck>& flag
     return flags;
 }
 
-void core::toBinFile(char *path, char *data) {
+void Snowball::toBinFile(char *path, char *data) {
     std::ofstream outFile(path, std::ios::binary);
     if (!outFile) {
         throw std::exception(); // TODO: REPLACE
@@ -53,7 +53,7 @@ void core::toBinFile(char *path, char *data) {
     outFile.close();
 }
 
-char *core::toBytes(const void* data, size_t dataSize) {
+char *Snowball::toBytes(const void* data, size_t dataSize) {
     char *byteData = new char[dataSize]; // ! DON'T FORGET TO FREE THE MEMORY
 
     memcpy(byteData, data, dataSize);
@@ -61,7 +61,7 @@ char *core::toBytes(const void* data, size_t dataSize) {
     return byteData;
 }
 
-void core::clearConsole() {
+void Snowball::clearConsole() {
 #if defined(_WIN32) || defined(WIN32)
     system("cls");
 #elif defined(__unix__) || defined(__APPLE__)
@@ -69,7 +69,7 @@ void core::clearConsole() {
 #endif
 }
 
-void core::fillArrayWithZeros(void *arrayPtr, size_t sizeOfType, size_t size) {
+void Snowball::fillArrayWithZeros(void *arrayPtr, size_t sizeOfType, size_t size) {
     memset(arrayPtr, 0, size * sizeOfType);
 }
 
