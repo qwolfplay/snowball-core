@@ -1,6 +1,7 @@
 #include "Snowball.h"
 
 #include <vector>
+#include <sstream>
 #ifdef __GNUC__
 #include <cstring>
 #endif
@@ -73,3 +74,14 @@ void Snowball::fillArrayWithZeros(void *arrayPtr, size_t sizeOfType, size_t size
     memset(arrayPtr, 0, size * sizeOfType);
 }
 
+std::vector<std::string> Snowball::splitString(const std::string& string, char delimiter) {
+    std::vector<std::string> tokens;
+    std::stringstream ss(string);
+    std::string token;
+
+    while (std::getline(ss, token, delimiter)) {
+        tokens.push_back(token);
+    }
+
+    return tokens;
+}

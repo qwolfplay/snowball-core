@@ -26,7 +26,7 @@ public:
     static char* toBytes(const void* data, size_t dataSize);
     static void clearConsole();
     static void fillArrayWithZeros(void *arrayPtr, size_t sizeOfType, size_t size);
-
+    static std::vector<std::string> splitString(const std::string& string, char delimiter);
     // TODO: static void deletePath(const std::filesystem::path path);
 
 };
