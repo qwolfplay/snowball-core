@@ -15,7 +15,7 @@ endif ()
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(snowball
+add_library(snowball SHARED
         src/core.cpp
 )
 
