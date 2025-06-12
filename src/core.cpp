@@ -1,4 +1,4 @@
-#include "Snowball.h"
+#include "Snowball/Snowball.h"
 
 #include <vector>
 #include <sstream>
