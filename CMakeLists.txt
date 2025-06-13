@@ -17,7 +17,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 add_library(snowball SHARED
-        src/core.cpp
+        src/String.cpp
+        src/Console.cpp
 )
 
 target_include_directories(snowball PUBLIC include)
