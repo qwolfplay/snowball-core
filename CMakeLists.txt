@@ -19,6 +19,7 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 add_library(snowball SHARED
         src/String.cpp
         src/Console.cpp
+        src/Buffers/RingBuffer.cpp
 )
 
 target_include_directories(snowball PUBLIC include)
