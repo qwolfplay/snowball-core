@@ -30,6 +30,5 @@ public:
 
 };
 }
-
-
 #endif //RINGBUFFER_H
+#include "../../../src/Buffers/RingBuffer.inl"

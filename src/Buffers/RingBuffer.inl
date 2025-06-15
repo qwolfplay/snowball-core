@@ -1,9 +1,4 @@
-//
-// Created by wolfplay on 6/13/25.
-//
-
-#include "Snowball/Buffers/RingBuffer.h"
-
+#pragma once
 namespace Snowball::buffers
 {
 template<typename T, size_t Size>
@@ -17,7 +12,7 @@ T& RingBuffer<T, Size>::operator[](size_t index) {
     //  }
     // for a bit faster execution if the compiler doesn't optimize modulo for small constants
     // (but most likely when using -O3 the compiler will optimize it anyway)
-    size_t realIndex = index + _read % Size;
+    size_t realIndex = (index + _read) % Size;
 
     return _dataArray[realIndex];
 }
